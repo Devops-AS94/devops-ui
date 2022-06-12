@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  public: 
+    image: artemsavchuk94/angular-devops
+    ports:
+      - "8080:80"
