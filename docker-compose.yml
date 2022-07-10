@@ -2,9 +2,10 @@ version: '3'
 
 services:
   public:
-    image: artemsavchuk94/angular-devops
-#    ports:
-#      - "8080:80" http://public:80
+    image: artemsavchuk94/angular-devops:latest
+    ports:
+     ["8080:80"]
+     #http://public:80
 
   proxy:
     image: 'jc21/nginx-proxy-manager:latest'
