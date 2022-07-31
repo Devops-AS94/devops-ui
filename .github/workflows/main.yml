@@ -44,9 +44,9 @@ jobs:
           instance-ids: ${{ secrets.INSTANCE_ID }}
           
           working-directory: /devops-ui
-          command: sudo git pull
-          working-directory: /devops-ui
-          command: sudo docker-compose up -d --force-recreate
+          command: |
+            sudo git pull
+            sudo docker-compose up -d --force-recreate
 
           
       - name: Get the outputs
