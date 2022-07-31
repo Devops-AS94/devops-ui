@@ -25,24 +25,13 @@ jobs:
           node-version: 16.x
       - run: npm install -g semantic-release @semantic-release/exec semantic-release-plus @semantic-release-plus/docker
       - run: semantic-release
-      - run: |
-             sudo yum update -y
-             aws configure
-             aws ssm start-session --target i-016f6ed221e7e72e2 --region eu-west-1
-             sudo git config --global --add safe.directory '*'
-             cd devops-ui
-             sudo git pull
-             docker-compose up -d --force-recreate
+   
       
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOCKER_USERNAME: ${{ env.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ${{ env.AWS_DEFAULT_REGION }}
-          
-          
+         
               
                  
           
