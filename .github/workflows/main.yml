@@ -45,6 +45,7 @@ jobs:
           
           working-directory: /devops-ui
           command: sudo git pull
+          working-directory: /devops-ui
           command: sudo docker-compose up -d --force-recreate
 
           
